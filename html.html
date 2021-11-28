@@ -1,0 +1,48 @@
+<html>
+
+<body>
+  <h2>Lab 9</h2> 
+  <br>
+  <div id="list">
+  </div>
+  <br>
+  <button type="button" onclick="GetList()">
+    Get List of Items
+  </button>
+  <script>
+    function GetList() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.timeout = 3000;
+      xhttp.responseType = "json";
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          ProcessJSON(this.response);
+        }
+      };
+      xhttp.open("GET", "json.json", true);
+      xhttp.send();
+    }
+    function ProcessJSON(json) {
+      for(let i = 0; i < json.items.length; i++) {
+        let para = document.createElement("p");
+        let nodeName = document.createTextNode("Name: " + json.items[i].name);
+        let nodePrice = document.createTextNode("Price: " + json.items[i].price);
+        let nodeQuantity = document.createTextNode("Quantity: " + json.items[i].quantity);
+        let br = document.createElement("br");
+        
+        para.appendChild(nodeName);
+        para.appendChild(br);
+        para.appendChild(nodePrice);
+        para.appendChild(br);
+        para.appendChild(nodeQuantity);
+        para.appendChild(br);
+        
+        let element = document.getElementById("list");
+        element.appendChild(para);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
