@@ -1,0 +1,25 @@
+{
+    "list": {
+        "items":[ 
+        {
+            "name": "Bubble Gum",
+            "price": 0.50,
+            "quantity": 3 
+        },
+        {
+            "name": "Ice",
+            "price": 5.00,
+            "quantity": 2
+        },
+        {
+            "name": "Rice",
+            "price": 4.75,
+            "quantity": 4
+        },
+        {
+            "name": "Milk",
+            "price": 2.50,
+            "quantity": 2
+        }
+    ]}
+}
